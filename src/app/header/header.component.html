@@ -1,0 +1,18 @@
+<nav>
+  <div class="nav-content">
+    <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "ball-atom" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+    <div class="logo">
+      <a href="#"> CloudStaff</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#" [routerLink]="'home'" [routerLinkActive]="'active'">Home</a></li>
+      <li><a href="#" [routerLink]="'about-us'" [routerLinkActive]="'active'">About</a></li>
+      <li><a href="#" [routerLink]="'contact-us'" [routerLinkActive]="'active'">Contact</a></li>
+      <li><a href="#" [routerLink]="'profile'" [routerLinkActive]="'active'" [ngClass]="{'d-none': isLogin == false}">Profile</a></li>
+      <li><a href="#" [routerLink]="'tickets'" [routerLinkActive]="'active'" [ngClass]="{'d-none': isLogin == false}">Tickets</a></li>
+      <li  *ngIf="isLogin == false"><a href="#" [routerLink]="'login'" [routerLinkActive]="'active'" >Login</a></li>
+      <li  *ngIf="isLogin == true"><a href="#" [routerLink]="'login'" [routerLinkActive]="'active'" (click)="onLogout()">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>
