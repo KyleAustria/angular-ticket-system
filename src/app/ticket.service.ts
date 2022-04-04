@@ -9,12 +9,14 @@ import { AuthService } from './auth.service';
 })
 export class TicketService {
 
-  // url = 'https://api-ubertickets.cloudstaff.com/v1/tickets/my?exclude_signature=1&page=1&_keyword=&_labels=&_assignees=&_templates=&hasAdvanceFilter=false';
+  //API URL FOR TICKETS
 
   ticketUrl = 'http://localhost:8000/api/tickets/';
 
 
   constructor(private _httpClient:HttpClient, private _authService:AuthService) { }
+
+    //GET ALL TICKETS
 
   getAll() : any {
     const token = this._authService.getSession();
@@ -22,6 +24,8 @@ export class TicketService {
       headers: new HttpHeaders().set("Authorization" , "Bearer " + token)
     });
   }
+
+    //GET BY ID FOR TICKETS
 
   getById(id : string) : any{
     const token = this._authService.getSession();
