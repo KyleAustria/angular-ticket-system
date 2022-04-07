@@ -21,26 +21,7 @@
       </div>
       <hr>
     </div><br>
-    <div  *ngFor="let field of ticket.template.fields">
-      <h6>{{field.label}}</h6>{{field.answers}}<br><br>
-      <!-- <h6>{{ticket.template.fields[2].label}}</h6>{{ticket.template.fields[2].answers}}<br><br> -->
-  </div>
-    <hr>
-    <div class="container">
-      <div class="content" *ngFor="let message of ticket.messages" >
-        <div class="left-side" >
-          <div class="address details">
-            <i class="fas fa-map-marker-alt"></i>
-            <div class="topic">{{message.creator.alias}}</div>
-            <div class="text-one">{{message.creator.job_title}}</div>
-          </div>
-        </div>
-        <div class="right-side">
-          <div class="topic-text">{{message.created_at}}</div>
-          <div [innerHtml] = "message.message" class="message"></div>
-      </div>
-    </div>
-    </div>
+
   </div>
 </main>
 <br>

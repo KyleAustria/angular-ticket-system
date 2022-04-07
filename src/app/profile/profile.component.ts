@@ -9,6 +9,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class ProfileComponent implements OnInit {
   profile: any = '';
   name = 'asdasdas';
+  message: any;
 
   constructor(
     private _globalService: GlobalService,
@@ -29,4 +30,18 @@ export class ProfileComponent implements OnInit {
     this.spinner.hide();
   }, 1000);
   }
+
+  updateBook(): void {
+    this._globalService.updateUser(this.profile.id)
+      .subscribe(
+        (        response: any) => {
+          console.log(response);
+          this.message = 'The product was updated!';
+        },
+        (        error: any) => {
+          console.log(error);
+        });
+  }
+
+
 }

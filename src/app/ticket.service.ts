@@ -9,13 +9,14 @@ import { AuthService } from './auth.service';
 })
 export class TicketService {
 
-  // url = 'https://api-ubertickets.cloudstaff.com/v1/tickets/my?exclude_signature=1&page=1&_keyword=&_labels=&_assignees=&_templates=&hasAdvanceFilter=false';
+  // URL FOR LOCALHOST API TICKETS
 
   ticketUrl = 'http://localhost:8000/api/tickets/';
 
-
   constructor(private _httpClient:HttpClient, private _authService:AuthService) { }
 
+
+    // API GET ALL
   getAll() : any {
     const token = this._authService.getSession();
     return this._httpClient.get(this.ticketUrl, {
@@ -23,12 +24,22 @@ export class TicketService {
     });
   }
 
+   // APIGET BY ID
   getById(id : string) : any{
     const token = this._authService.getSession();
     return this._httpClient.get(this.ticketUrl + id ,{
       headers: new HttpHeaders().set("Authorization" , "Bearer " + token)
     });
   }
+
+     // DELETE BY ID
+     deleteTicket(id : string) : any{
+      const token = this._authService.getSession();
+      return this._httpClient.delete(this.ticketUrl + id ,{
+        headers: new HttpHeaders().set("Authorization" , "Bearer " + token)
+      });
+
+    }
 
 }
 
