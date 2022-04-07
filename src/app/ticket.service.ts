@@ -9,14 +9,12 @@ import { AuthService } from './auth.service';
 })
 export class TicketService {
 
-  // URL FOR LOCALHOST API TICKETS
 
   ticketUrl = 'http://localhost:8000/api/tickets/';
 
   constructor(private _httpClient:HttpClient, private _authService:AuthService) { }
 
 
-    // API GET ALL
   getAll() : any {
     const token = this._authService.getSession();
     return this._httpClient.get(this.ticketUrl, {
@@ -24,7 +22,6 @@ export class TicketService {
     });
   }
 
-   // APIGET BY ID
   getById(id : string) : any{
     const token = this._authService.getSession();
     return this._httpClient.get(this.ticketUrl + id ,{

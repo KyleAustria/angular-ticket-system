@@ -35,6 +35,7 @@ export class GlobalService {
       update(id: any, data: any): Observable<any> {
         return this._httpClient.put(`${this.urlupdate}/${id}`, data).pipe(
           catchError(this.handleError)
+
         );
       }
 
