@@ -14,14 +14,15 @@
 
               <div class="row mt-3">
                 <div class="col-md-12"><label class="labels">Name</label><input type="text" [(ngModel)]="profile.name" class="form-control" placeholder="{{profile.name}}" value=""></div>
-                <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" placeholder="{{profile.email}}" value=""></div>
-                <div class="col-md-12"><label class="labels">Role</label><input type="text" class="form-control" placeholder="{{profile.role}}" value=""></div>
-                <div class="col-md-12"><label class="labels">Updated</label><input type="text" class="form-control"  placeholder="{{profile.created_at | date: 'dd-MM-yyyy h:mm'}}"></div>
-                <div class="col-md-12"><label class="labels">Created</label><input type="text" class="form-control"  placeholder="{{profile.updated_at | date: 'dd-MM-yyyy h:mm'}}"></div>
+                <div class="col-md-12"><label class="labels">Password</label><input type="password" [(ngModel)]="profile.password" class="form-control" value="{{profile.password}}"></div>
+                <div class="col-md-12"><label class="labels">Email</label><input type="text" [(ngModel)]="profile.email" class="form-control" placeholder="{{profile.email}}" value=""></div>
+                <div class="col-md-12"><label class="labels">Role</label><input type="text" [(ngModel)]="profile.role" class="form-control" placeholder="{{profile.role}}" value=""></div>
+                <div class="col-md-12"><label class="labels">Updated</label><input type="text" [(ngModel)]="profile.created_at" class="form-control"  placeholder="{{profile.created_at | date: 'dd-MM-yyyy h:mm'}}"></div>
+                <div class="col-md-12"><label class="labels">Created</label><input type="text" [(ngModel)]="profile.updated_at" class="form-control"  placeholder="{{profile.updated_at | date: 'dd-MM-yyyy h:mm'}}"></div>
 
             </div>
 
-              <div class="mt-5 text-center"><button class="btn btn-primary profile-button" (click)="updateBook()" type="button">Save Profile</button></div>
+              <div class="mt-5 text-center"><button class="btn btn-primary profile-button" (click)="updateProfile()" type="button">Save Profile</button></div>
           </div>
       </div>
 

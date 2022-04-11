@@ -2,8 +2,12 @@
 <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "ball-atom" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
 <br>
 <h1 class="tick"><b>Tickets Available</b></h1><br>
+
+<button class="button-one" [routerLink]="'create-ticket'" type="button">Create Ticket</button>
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="padding-left: 150px; padding-right: 150px;">
+
 <div class="card container " *ngFor="let ticket of tickets" >
+
 
 
   <div class="text">
@@ -17,7 +21,7 @@
   <div class="links">
       <div class="sub-main">
         <button class="button-one" [routerLink]="'/tickets/'+ticket.id">View Ticket</button><br><br><br>
-        <button class="button-one" (click)="delTicket()">Delete</button>
+        <button class="button-one" (click)="delTicket(ticket.id)">Delete</button>
       </div>
   </div>
 </div>

@@ -19,6 +19,7 @@ import { ChildTicketComponent } from './tickets/child-ticket/child-ticket.compon
 import { NgxLoadingModule } from 'ngx-loading';
 import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { NgxSpinnerModule } from "ngx-spinner";
+import { CreateTicketComponent } from './tickets/create-ticket/create-ticket.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
     PageNotFoundComponent,
     ProfileComponent,
     LoginComponent,
-    ChildTicketComponent
+    ChildTicketComponent,
+    CreateTicketComponent
   ],
   imports: [
     BrowserModule,

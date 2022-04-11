@@ -1,3 +1,4 @@
+import { CreateTicketComponent } from './tickets/create-ticket/create-ticket.component';
 import { ChildTicketComponent } from './tickets/child-ticket/child-ticket.component';
 import { AppGuardGuard } from './app-guard.guard';
 import { NgModule } from '@angular/core';
@@ -37,6 +38,10 @@ const routes: Routes = [
     canActivate : [AppGuardGuard]
   },
   {
+    path: 'tickets/create-ticket',
+    component: CreateTicketComponent,
+  },
+  {
     path: 'profile',
     component: ProfileComponent,
     canActivate : [AppGuardGuard]
@@ -46,6 +51,7 @@ const routes: Routes = [
     component: ChildTicketComponent,
     canActivate : [AppGuardGuard]
   },
+
   {
     path: '**',
     component: PageNotFoundComponent

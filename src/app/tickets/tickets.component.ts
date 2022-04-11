@@ -19,6 +19,8 @@ export class TicketsComponent implements OnInit {
   tickets : any = "";
 
 
+
+
   ngOnInit(): void {
     this.spinner.show();
     setTimeout(() => {
@@ -39,10 +41,9 @@ export class TicketsComponent implements OnInit {
 
   }
 
+  delTicket(id : any){
 
-  delTicket(){
-    this.id = 14;
-    this._ticketService.deleteTicket(this.id).subscribe((data : any)=>{
+    this._ticketService.deleteTicket(id).subscribe((data : any)=>{
          console.log("success");
     });
 }

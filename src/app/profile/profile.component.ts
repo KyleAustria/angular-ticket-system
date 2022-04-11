@@ -7,8 +7,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
-  profile: any = '';
-  name = 'asdasdas';
+  profile: any;
   message: any;
 
   constructor(
@@ -24,24 +23,21 @@ export class ProfileComponent implements OnInit {
       this._globalService.getAll().subscribe((profiles: any) => {
         console.log(profiles);
         this.profile = profiles;
-        console.log('Profile',this.profile);
-
-    });
-    this.spinner.hide();
-  }, 1000);
+        console.log('Profile', this.profile);
+      });
+      this.spinner.hide();
+    }, 1000);
   }
 
-  updateBook(): void {
-    this._globalService.updateUser(this.profile.id)
-      .subscribe(
-        (        response: any) => {
-          console.log(response);
-          this.message = 'The product was updated!';
-        },
-        (        error: any) => {
-          console.log(error);
-        });
+  updateProfile(): void {
+    this._globalService.updateUser(this.profile).subscribe(
+      (response: any) => {
+        console.log(response);
+        this.message = 'The product was updated!';
+      },
+      (error: any) => {
+        console.log(error);
+      }
+    );
   }
-
-
 }
